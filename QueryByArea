@@ -1,1 +1,43 @@
 
+folium-101 activate 
+jupyter(create what you want)
+or
+conda install bokeh 
+
+import folium
+import pandas as pd 
+
+my_map = folium.map(
+    location=[27.00, 133.00], 
+    zoom_start=2
+)
+my_map
+cities = pd.read_csv('df_australia_postcode.csv')
+cities.head(50)
+
+my_map = folium.map(
+    location=[27.00, 133.00], 
+    zoom_start=2
+)
+    
+for_,city in cities.iterrows():  
+    folium.marker(
+        location=[city['long'], city['lat]]'
+        popup=city['name'],
+        tooltip=city['name'],
+        popup=postalcode['number'],
+        popup=bin_id['number'],
+        icon=folium.icon(color=city['color'], prefixa'fa', icon'circle')
+    ).add_to(my map)
+    
+my_map
+my_map.save(BinEco)
+
+def select_marker_colour(row):
+    if row['quantity'] == 'low':
+        return 'blue'
+    elif row['quantity'] == 'medium':
+        return 'red'
+    elif row ['quantity'] == 'high':
+        return 'black'
+    
